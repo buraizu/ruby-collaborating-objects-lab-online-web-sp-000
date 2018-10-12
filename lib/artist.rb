@@ -24,7 +24,7 @@ class Artist
     if @@all.length > 0
       @@all.each do |artist|
         if artist.name == name
-          return name
+          return artist
         end
       end
       name = Artist.new(name)
@@ -39,3 +39,5 @@ class Artist
   end
 
 end
+
+
