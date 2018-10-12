@@ -1,28 +1,58 @@
-require 'pry'
+# require 'pry'
+# 
+# class Song
+# 
+#   attr_accessor :name, :artist
+# 
+#   def initialize(name)
+#     @name = name
+#   end
+# 
+#   def self.new_by_filename(filename)
+#     data = filename.split(" - ")
+#     new_song_title = data[1]
+#     new_song = self.new(new_song_title)
+#     new_song.artist_name=data[0]
+#     puts new_song.artist_name
+#     binding.pry
+#     new_song
+#   end
+# 
+#   def artist_name=(name)
+#     self.artist = Artist.find_or_create_by_name(name)
+#     puts self.artist
+# 
+#   end
+# 
+# 
+# end
 
 class Song
 
-  attr_accessor :name, :artist
+  attr_accessor :artist, :name
 
-  def initialize(name)
+  def initialize (name)
     @name = name
   end
 
+   def artist_name=(name)
+     self.artist = Artist.find_or_create_by_name(name)
+     artist.add_song(self)
+   end
+
   def self.new_by_filename(filename)
-    data = filename.split(" - ")
-    new_song_title = data[1]
-    new_song = self.new(new_song_title)
-    new_song.artist_name=data[0]
-    puts new_song.artist_name
-    binding.pry
+    artist, song = filename.split(" - ")
+    new_song = Song.new(song)
+    new_song.artist_name=(artist)
     new_song
   end
 
-  def artist_name=(name)
-    self.artist = Artist.find_or_create_by_name(name)
-    puts self.artist
-
-  end
-
+  # def self.new_by_filename(filename)
+  #   s = filename.split(" - ")
+  #   new_song = Song.new(s[1])
+  #   new_song.artist = Artist.find_or_create_by_name(s[0])
+  #   new_song.artist.add_song(new_song)
+  #   new_song
+  # end
 
 end
