@@ -15,7 +15,7 @@ class Song
     new_song = self.new(new_song_title)
     puts new_song
     new_song.artist = artist
-    puts new_song
+    puts new_song.artist
     binding.pry
 
   end
