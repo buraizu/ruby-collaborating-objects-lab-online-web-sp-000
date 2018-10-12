@@ -14,6 +14,7 @@ class Song
     artist = Artist.find_or_create_by_name(data[0])
     new_song = self.new(new_song_title)
     new_song.artist = artist
+    artist.add_song(new_song)
     new_song
   end
 
