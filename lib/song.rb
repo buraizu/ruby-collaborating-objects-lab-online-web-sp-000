@@ -13,7 +13,7 @@ class Song
     new_song_title = data[1]
     new_song = self.new(new_song_title)
     new_song.artist_name=data[0]
-    puts new_song.artist
+    puts data[0]
     binding.pry
     new_song
   end
