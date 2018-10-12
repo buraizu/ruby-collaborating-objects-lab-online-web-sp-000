@@ -13,11 +13,8 @@ class Song
     new_song_title = data[1]
     artist = Artist.find_or_create_by_name(data[0])
     new_song = self.new(new_song_title)
-    puts new_song
     new_song.artist = artist
-    puts new_song.artist
-    binding.pry
-
+    new_song
   end
 
   def artist_name=(name)
