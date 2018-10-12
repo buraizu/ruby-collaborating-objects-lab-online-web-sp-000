@@ -27,8 +27,9 @@ class Artist
           return artist
         end
       end
-      name = Artist.new(name)
-      name
+      new_artist = Artist.new(name)
+      new_artist.save
+      new_artist
     end
   end
 
