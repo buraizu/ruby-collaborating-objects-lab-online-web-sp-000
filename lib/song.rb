@@ -1,13 +1,13 @@
 # require 'pry'
-# 
+#
 # class Song
-# 
+#
 #   attr_accessor :name, :artist
-# 
+#
 #   def initialize(name)
 #     @name = name
 #   end
-# 
+#
 #   def self.new_by_filename(filename)
 #     data = filename.split(" - ")
 #     new_song_title = data[1]
@@ -17,14 +17,14 @@
 #     binding.pry
 #     new_song
 #   end
-# 
+#
 #   def artist_name=(name)
 #     self.artist = Artist.find_or_create_by_name(name)
 #     puts self.artist
-# 
+#
 #   end
-# 
-# 
+#
+#
 # end
 
 class Song
