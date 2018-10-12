@@ -22,20 +22,19 @@ class Artist
     @@all
   end
 
-  def self.find_or_create_by_name(name)
-    unless @@all = []
-      @@all.each do |artist|
-        if artist.name == name
-          puts artist.name
-          binding.pry
-          return artist
+    def self.find_or_create_by_name(artist)
+      unless @@all == []
+        @@all.each do |a|
+          if a.name == artist
+            return a
+          end
         end
       end
-      new_artist = Artist.new(name)
-      new_artist.save
-      new_artist
+  
+        new_artist = Artist.new(artist)
+        new_artist.save
+        new_artist
     end
-  end
 
   def print_songs
     @songs.each do |song|
