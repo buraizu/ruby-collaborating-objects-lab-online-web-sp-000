@@ -23,7 +23,7 @@ class Artist
   end
 
   def self.find_or_create_by_name(name)
-    if @@all.length > 0
+    unless @@all = []
       @@all.each do |artist|
         if artist.name == name
           puts artist.name
