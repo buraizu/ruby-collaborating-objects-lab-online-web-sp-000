@@ -12,9 +12,10 @@ class Song
     data = filename.split(" - ")
     new_song_title = data[1]
     artist = Artist.find_or_create_by_name(data[0])
-    
-    
-    
+    puts artist
+    binding.pry
+
+
   end
 
   def artist_name=(name)
