@@ -24,13 +24,13 @@ class Artist
 
     def self.find_or_create_by_name(artist)
       unless @@all == []
-        @@all.each do |a|
-          if a.name == artist
-            return a
+        @@all.each do |element|
+          if element.name == artist
+            return element
           end
         end
       end
-  
+
         new_artist = Artist.new(artist)
         new_artist.save
         new_artist
