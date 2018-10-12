@@ -13,8 +13,8 @@ class Song
     new_song_artist = data[0]
     new_song_title = data[1]
     new_song = self.new(new_song_title)
-    new_song.artist = new_song_artist
-    puts new_song.artist
+    new_song.artist_name=(new_song_artist)
+    puts new_song
     new_song
   end
 
